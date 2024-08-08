@@ -1,12 +1,13 @@
 # LCB流程：（以Linker为核心）
 一.Linker的初始化
-1.首先在Activity，Fragment，Dialog创建时调用CreateLinker创建根Linker
-2.CreateLinker会调用ViewBuilder的build方法创建Linker
-3.build内部会：
-调用createView创建Linker对应的View视图。
-创建Linker对应的Controller实例。
-创建Linker对应的Component实例。
-通过构造函数new (view, controller, component)来实例化Linker。
+1. 首先在Activity，Fragment，Dialog创建时调用CreateLinker创建根Linker
+2. CreateLinker会调用ViewBuilder的build方法创建Linker
+3. build内部会：
+* 调用createView创建Linker对应的View视图。
+* 创建Linker对应的Controller实例。
+* 创建Linker对应的Component实例。
+* 通过构造函数new (view, controller, component)来实例化Linker。
+
 二.Linker的依赖注入和附加
 1.在Linker的构造函数内部调用component.inject(controller)，为controller进行注入，并为controller注入presenter
 2.顺序调用Linker的attach方法，将Linker的View添加到根Linker里面：
