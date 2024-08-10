@@ -28,8 +28,11 @@ Presenter调用didLoad方法。
 1. Linker内部调用detach方法，移除所有子Linker并调用其detach方法，调用controller的detach方法。
 2. Controller执行onDetach,Presenter执行dispatchUnload。
 3. Controller发布Controller生命周期事件DETACH到lifecycleSubject。
+   
+   ![alt text](image.png)
 
----
+
+</br>
 
 # LCB类图：
 1. 主要的类：
